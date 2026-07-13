@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Winner</title>
+</head>
+<body>
+<table border="10" cellpadding="10" style="margin: auto; border: 10px solid black;">
+        <tr>
+            <th>&emsp;{{places[0][0]}}&emsp;</th>
+            <th>&emsp;{{places[0][1]}}&emsp;</th>
+            <th>&emsp;{{places[0][2]}}&emsp;</th>
+        </tr>
+        <tr>
+            <th>&emsp;{{places[1][0]}}&emsp;</th>
+            <th>&emsp;{{places[1][1]}}&emsp;</th>
+            <th>&emsp;{{places[1][2]}}&emsp;</th>
+        </tr>
+        <tr>
+            <th>&emsp;{{places[2][0]}}&emsp;</th>
+            <th>&emsp;{{places[2][1]}}&emsp;</th>
+            <th>&emsp;{{places[2][2]}}&emsp;</th>
+        </tr>
+    </table>    <h5>{{pla}}</h5>
+    {% if who=='O'%}
+    <h1>YAYY I won the match!!</h1>
+    {%elif who=='Draw'%}
+    <h1>The match is a draw!!</h1>
+    {%else%}
+    <h1>YOU won the match!!</h1>
+    {% endif %}
+</body>
+</html>
+</html>

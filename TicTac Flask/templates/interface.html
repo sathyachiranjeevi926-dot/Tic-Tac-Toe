@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Game</title>
+</head>
+<body>
+    <h1>welcome to the game</h1>
+    <table border="10" cellpadding="10" cellspacing="5" style="margin: auto; border: 10px solid black;">
+        <tr>
+            <th>&emsp;{{places[0][0]}}&emsp;</th>
+            <th>&emsp;{{places[0][1]}}&emsp;</th>
+            <th>&emsp;{{places[0][2]}}&emsp;</th>
+            <th rowspan="3"></th>
+            <td>&emsp;{{lis[0]}}&emsp;</td>
+            <td>&emsp;{{lis[1]}}&emsp;</td>
+            <td>&emsp;{{lis[2]}}&emsp;</td>
+
+        </tr>
+        <tr>
+            <th>&emsp;{{places[1][0]}}&emsp;</th>
+            <th>&emsp;{{places[1][1]}}&emsp;</th>
+            <th>&emsp;{{places[1][2]}}&emsp;</th>
+            <td>&emsp;{{lis[3]}}&emsp;</td>
+            <td>&emsp;{{lis[4]}}&emsp;</td>
+            <td>&emsp;{{lis[5]}}&emsp;</td>
+        </tr>
+        <tr>
+            <th>&emsp;{{places[2][0]}}&emsp;</th>
+            <th>&emsp;{{places[2][1]}}&emsp;</th>
+            <th>&emsp;{{places[2][2]}}&emsp;</th>
+            <td>&emsp;{{lis[6]}}&emsp;</td>
+            <td>&emsp;{{lis[7]}}&emsp;</td>
+            <td>&emsp;{{lis[8]}}&emsp;</td>
+        </tr>
+    </table>
+    <form method="post">
+    {% if placed %}
+        <h3>Enter the place : <input type="number" min="1" max="9" name="place" required> <button type="submit">Placee!!</button> </h3>
+    {% elif placed==False %}
+        <h3>OOPS, The place is already occupied try again!!: <input type="number" min="1" max="9" name="place" required> <button type="submit">Placee!!</button></h3>
+    {% else %}
+        <h3>Enter the place : <input type="number" min="1" max="9" name="place" required> <button type="submit">Placee!!</button> </h3>
+    {% endif %}
+    </form>
+</body>
+</html>
