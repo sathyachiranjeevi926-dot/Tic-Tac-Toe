@@ -16,12 +16,6 @@ def place():
         p=int(request.form['place'])
         player_turn(p-1)
         if check_win()[0]:
-            places=[["_","_","_"],["_","_","_"],["_","_","_"]]
-            user=[[False,False,False],[False,False,False],[False,False,False]]
-            pc=[[False,False,False],[False,False,False],[False,False,False]]
-            last=-1
-            placed=None
-            lis=list(range(1,10))
             return render_template('Win.html',who=check_win()[1],places=places,lis=lis)
         if placed:
             place=system()
@@ -31,6 +25,20 @@ def place():
             return render_template('Win.html',who=check_win()[1],places=places,lis=lis)
         return render_template('interface.html',places=places,placed=placed,lis=lis)
     return render_template('interface.html',places=places,lis=lis)
+
+@app.route("/reset", methods=["POST"])
+def reset():
+    global places, user, pc, last, placed, lis
+
+    places = [["_","_","_"],["_","_","_"],["_","_","_"]]
+    user = [[False]*3 for _ in range(3)]
+    pc = [[False]*3 for _ in range(3)]
+    last = -1
+    placed = None
+    lis = list(range(1,10))
+
+    return redirect("/")
+
 
 def player_turn(n):
     global places,last,placed
