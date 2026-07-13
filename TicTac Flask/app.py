@@ -11,11 +11,17 @@ placed=None
 lis=list(range(1,10))
 @app.route('/',methods=['post','get'])
 def place():
-    global placed,places,lis
+    global placed,places,lis,user,pc,last
     if request.method=='POST':
         p=int(request.form['place'])
         player_turn(p-1)
         if check_win()[0]:
+            places=[["_","_","_"],["_","_","_"],["_","_","_"]]
+            user=[[False,False,False],[False,False,False],[False,False,False]]
+            pc=[[False,False,False],[False,False,False],[False,False,False]]
+            last=-1
+            placed=None
+            lis=list(range(1,10))
             return render_template('Win.html',who=check_win()[1],places=places,lis=lis)
         if placed:
             place=system()
