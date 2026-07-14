@@ -3,14 +3,18 @@
 <head>
     <title>Game</title>
 </head>
-<body>
-    <h1>welcome to the game</h1>
-    <table border="10" cellpadding="10" cellspacing="5" style="margin: auto; border: 10px solid black;">
+<body bgcolor="#fff8dc">
+<header>
+		<center><h1>welcome to the game {{name}}</h1>
+		<p>YOU(X) vs Computer(O)</p></center>
+	</header>
+
+    <center><table border="8" cellpadding="12" cellspacing="5" bgcolor="silver">
         <tr>
             <th>&emsp;{{places[0][0]}}&emsp;</th>
             <th>&emsp;{{places[0][1]}}&emsp;</th>
             <th>&emsp;{{places[0][2]}}&emsp;</th>
-            <th rowspan="3"></th>
+            <th rowspan="3">&emsp;&emsp;&emsp;&emsp;&emsp;</th>
             <td>&emsp;{{lis[0]}}&emsp;</td>
             <td>&emsp;{{lis[1]}}&emsp;</td>
             <td>&emsp;{{lis[2]}}&emsp;</td>
@@ -32,7 +36,8 @@
             <td>&emsp;{{lis[7]}}&emsp;</td>
             <td>&emsp;{{lis[8]}}&emsp;</td>
         </tr>
-    </table>
+    </table></center>
+    <p>{{place[1]}}</p>
     <form method="post">
     {% if placed %}
         <h3>Enter the place : <input type="number" min="1" max="9" name="place" required> <button type="submit">Placee!!</button> </h3>
